@@ -50,38 +50,5 @@ describe('The bill with settings factory function', function(){
     });
 
 
-    describe('use values', function(){
-
-        it('should be able to use the  call cost set', function(){
-            let settingsBill = billWithSettings();
     
-            settingsBill.setCallCost(2.30);
-            settingsBill.getSmsCost(0.30);
-
-            settingsBill.makeCall();
-            settingsBill.makeCall();
-            settingsBill.makeCall();
-            
-            assert.equal(6.00, settingsBill.getTotalCost());
-            assert.equal(6.00, settingsBill.getTotalCallCost());
-            assert.equal(0.00, settingsBill.getTotalSmsCost());
-        });
-
-        it('should be able to use the  call cost set for 2 calls at 1.00 each', function(){
-            let settingsBill = billWithSettings();
-    
-            settingsBill.setCallCost(1.00);
-            settingsBill.getSmsCost(0.35);
-
-            settingsBill.makeCall();
-            settingsBill.makeCall();
-            
-            
-            assert.equal(2.00, settingsBill.getTotalCost());
-            assert.equal(2.00, settingsBill.getTotalCallCost());
-            assert.equal(0.00, settingsBill.getTotalSmsCost());
-        });
-
-   
-});
 });
