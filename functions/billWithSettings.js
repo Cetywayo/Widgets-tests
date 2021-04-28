@@ -1,19 +1,22 @@
-function billWithSettings(){
+function BillWithSettings(){
 
-    var callbill=0;
+    var theCallCost=0;
     var smsBill=0;
     var warningLevel=0;
     var criticalLevel=0;
 
-    var callCostTotal=0;
-    var smsCostTotal=0;
+    var totalSms = 0;
+    var totalCall = 0;
+   // var totalForAll = 0;
+
+  
 
     function setCallCost(callcost){
-        callbill= callcost;
+        theCallCost= callcost;
     }
 
     function getCallCost(){
-        return callbill;
+        return theCallCost;
     }
 
 
@@ -40,23 +43,58 @@ function billWithSettings(){
     function getCritical (){
         return criticalLevel
     }
-
+    
     function makeCall(){
-     callCostTotal += theCallCost
-    }
-
-    function getTotalCost(){
-        return 6.00;
-
-    }
-
-    function getTotalCallCost(){
-      return 6.00;
-    }
-
-    function getTotalSmsCost(){
-        return call;
+      if(!hasReachedCriticalLevel()){
+        totalCall += theCallCost ;
       }
+      
+
+    }
+
+    function getTotalCallcost(){
+        return totalCall;
+    }
+
+    function getTotalSmscost(){
+        return totalSms;
+    }
+
+    function getTotalcost(){
+        return totalCall + totalSms;
+    }
+
+    function addTotals(billType){
+      if(billType==="call"){
+        makeCall()  
+      }
+      if(billType === "sms"){
+        sendSms()
+      }
+    }
+
+    function sendSms(){
+        if(!hasReachedCriticalLevel()){
+            totalSms += smsBill ;
+          }
+    }
+
+    function hasReachedCriticalLevel(){
+        return getTotalcost() >= getCritical();
+    }
+
+    function addClass(){
+
+        if (hasReachedCriticalLevel()){
+            return "danger"
+          }
+
+        if (getTotalcost() >= getWarning()){
+          return "warning"
+        }
+
+    }
+    
 
     return {
         setCallCost,
@@ -68,8 +106,13 @@ function billWithSettings(){
         getCritical,
         setCriticalLevel,
         makeCall,
-        getTotalCost,
-        getTotalCallCost,
-        getTotalSmsCost
+        getTotalcost,
+        getTotalCallcost,
+        getTotalSmscost,
+        sendSms,
+        addClass,
+        addTotals
+       
+       
     }
 }
