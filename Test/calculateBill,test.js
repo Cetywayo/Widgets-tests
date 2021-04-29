@@ -37,24 +37,7 @@
         it('should  returns the warning', function(){
             let settingsBill = calculateBill();
             
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
-            settingsBill.entercalculateBill('call');
+            settingsBill.entercalculateBill('sms,call,call,call,sms,sms,call,call,call,sms,sms,call,call,call,sms,sms,call,call,call,sms,sms,call');
     
            
             assert.equal('warning', settingsBill.getLevel());
@@ -65,30 +48,7 @@
             it('should  returns the critical', function(){
                 let settingsBill = calculateBill();
                 
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
-                settingsBill.entercalculateBill('call');
+                settingsBill.entercalculateBill('sms,call,call,call,sms,sms,call,call,call,sms,sms,call,call,call,sms,sms,call,call,call,sms,sms,call,sms,call,call,call,sms,sms,call,call,call,sms,sms,call,call,call,sms,sms,call,call,call,sms,sms,call');
         
                
                 assert.equal('critical', settingsBill.getLevel());
