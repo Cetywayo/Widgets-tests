@@ -68,7 +68,7 @@ describe("use values" , function(){
 
    });
 
-   it ("should be able to use the call cost set for 2 calls at 1.35 each", function(){
+   it ("should be able to use the calls and set the critical level", function(){
     let settingsBill = BillWithSettings();
 
     settingsBill.setCallCost(2.00);
@@ -108,7 +108,7 @@ it ("should be able to send 2 sms's at 0.85", function(){
 
 });
 
-it ("should be able to send 2 sms's at 0.85 and make 2 call at 1.35", function(){
+it ("should be able to send list of sms's, calls and return totals", function(){
     let settingsBill = BillWithSettings();
 
     settingsBill.setCallCost(1.35);
